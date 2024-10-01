@@ -116,7 +116,7 @@ jobs:
           docker buildx build -f - . \
             --tag "gcr.io/${GCR_PROJECT}/${imageType}-${{ steps.registry-repo.outputs.name }}:${{ steps.event.outputs.tag }}" \
             --tag "gcr.io/${GCR_PROJECT}/${imageType}-${{ steps.registry-repo.outputs.name }}:latest" \
-            --platform linux/amd64,linux/arm64 \
+            --platform linux/amd64,linux/arm64,linux/s390x \
             --provenance=false \
             --push
         done
